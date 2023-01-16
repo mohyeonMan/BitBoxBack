@@ -17,6 +17,10 @@
         <java.version>11</java.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
         <!-- jwt token 1월 2일 17:31 -->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
@@ -98,12 +102,21 @@
             <scope>system</scope>
             <systemPath>${pom.basedir}/src/main/resources/libs/kobis-opcl-rest-v1.0.jar</systemPath>
         </dependency>
+<<<<<<< HEAD
          <dependency>
+=======
+        
+        <dependency>
+>>>>>>> abae11f4bc15fa304b5c77d534e86e7ed2a6dcfa
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> abae11f4bc15fa304b5c77d534e86e7ed2a6dcfa
     </dependencies>
 
     <build>
