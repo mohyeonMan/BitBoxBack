@@ -8,4 +8,6 @@ public interface MypageService {
 
 	public User getEditProfile(String username);
 
+	public void emailChange(String username, String email);
+
 }

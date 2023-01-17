@@ -27,5 +27,11 @@ public class MypageController {
 			System.out.println(username);
 			return mypageservice.getEditProfile(username);
 		}
+		
+		@GetMapping(path = "emailChange")
+		public void emailChange(@RequestParam String username, @RequestParam String email) {
+			System.out.println(email);
+		     mypageservice.emailChange(username, email);
+		}
 
 }

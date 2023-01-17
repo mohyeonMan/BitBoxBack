@@ -20,4 +20,10 @@ public class MypageServiceImpl implements MypageService {
 		return mypageDAO.findByUser(username);
 	}
 
+	@Override
+	public void emailChange(String username, String email) {
+		mypageDAO.emailChange(username, email);
+		
+	}
+
 }
