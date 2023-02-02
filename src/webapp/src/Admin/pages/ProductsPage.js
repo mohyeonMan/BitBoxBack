@@ -25,7 +25,7 @@ export default function ProductsPage() {
 
 const [list, setList] = useState([]);
 useEffect(() => {
-    axios.get('http://localhost:8080/movielist/admin_movie_list')
+    axios.get('/movielist/admin_movie_list')
     .then(res => setList(res.data))
     .catch(err => console.log(err))
 },[])
@@ -34,7 +34,7 @@ useEffect(() => {
 const movieDelete = (movieTitle)=> {
   const movieDeleteList = list.filter((item)=> item.movie_title !== movieTitle);
   setList(movieDeleteList);
-  axios.delete(`http://localhost:8080/movielist/admin_movie_delete?movie_title=${movieTitle}`)
+  axios.delete(`/movielist/admin_movie_delete?movie_title=${movieTitle}`)
         .then(()=>{alert('삭제 완료')})
         .catch(error => console.log(error))
   
