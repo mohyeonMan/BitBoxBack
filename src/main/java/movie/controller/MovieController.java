@@ -90,7 +90,9 @@ public class MovieController {
 	//세번째
 	@PostMapping(path = "write")
 	public void write(@ModelAttribute MovieDTO movieDTO) {
+		
 		MovieService.write(movieDTO);
+		
 	}
 
 	
@@ -182,6 +184,13 @@ public class MovieController {
 	@DeleteMapping(path = "admin_movie_delete")
 	public void admin_movie_delete(@RequestParam String movie_title) {
 		MovieService.admin_movie_delete(movie_title);
+	}
+	
+	//관리자 페이지 이미 등록된 무비리스트 검색
+	@GetMapping(path = "adminMovieSearch")
+	public List<MovieDTO> adminMovieSearch(@RequestParam Map<String, String> map){
+		return MovieService.adminMovieSearch(map);
+
 	}
 	
 	//---- 박지훈

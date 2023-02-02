@@ -23,7 +23,7 @@ public class MovieDTO {
 
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "MOVIETABLE_SEQ_GENERATOR")
 	@Column(name = "movie_number")
-	private String movie_number;    //시퀀스
+	private String movie_number;    //시퀀스 int로 해야 데이터 null 안됨 
 
 	@Id
 	@Column(name = "movie_title",nullable = false, length = 100)

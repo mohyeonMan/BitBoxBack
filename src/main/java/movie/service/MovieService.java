@@ -65,6 +65,8 @@ public interface MovieService {
 
 	public String getMovieURL(String title);
 
+	public List<MovieDTO> adminMovieSearch(Map<String, String> map);
+
 
 
 }

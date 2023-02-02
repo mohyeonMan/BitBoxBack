@@ -201,6 +201,17 @@ public class MovieServiceImpl implements MovieService {
 		movieDAO.deleteByAdmin_movie_delete(movie_title);
 		
 	}
+	//관리자 페이지 이미 등록된 무비 리스트 검색
+	@Override
+	public List<MovieDTO> adminMovieSearch(Map<String, String> map) {
+	String adminMovieSearchOption = map.get("adminMovieSearchOption");
+	String adminMovieSearchKeyword = map.get("adminMovieSearchKeyword");
+	if(adminMovieSearchOption.equals("movie_title"))
+		return movieDAO.getAdminMovieSearchTitle(adminMovieSearchKeyword);
+	else
+		return movieDAO.getAdminMovieSearchSubTitle(adminMovieSearchKeyword);
+
+	}
 
 	@Override
 	public String getMovieURL(String title) {
