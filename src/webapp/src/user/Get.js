@@ -29,7 +29,7 @@ const Get = () => {
         seatGetter()
     },[])
     const seatGetter =()=>{
-        axios.get(`http://localhost:8080/book/getSeat?pk=${pk}`)
+        axios.get(`/book/getSeat?pk=${pk}`)
         .then(res=>{
             var copy = res.data;
             setShowDTO(copy)
@@ -37,7 +37,7 @@ const Get = () => {
         }).catch(err=>console.log(err))
     }
     useEffect(()=>{
-        axios.get(`http://localhost:8080/movielist/getMovieURL?title=${showDTO.movie_title}`)
+        axios.get(`/movielist/getMovieURL?title=${showDTO.movie_title}`)
         .then(res=> setMovieURL(res.data)).catch(err=>console.log(err))
     },[showDTO])
 
