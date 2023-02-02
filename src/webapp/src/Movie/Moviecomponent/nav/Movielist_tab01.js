@@ -65,7 +65,7 @@ const Movielist_tab01 = () => {
     // }
 
     const  movie_add_total_list = () => {
-        axios.get('http://localhost:8080/movielist/getMovieList_boxoffice')
+        axios.get('/movielist/getMovieList_boxoffice')
             .then(res => {setMovie_count(res.data.length)
                 setThe_number_of_movielist(the_number_of_movielist + 20);
                 console.log("전체영화리스트 = " + the_number_of_movielist) 
@@ -75,7 +75,7 @@ const Movielist_tab01 = () => {
     }
 
     const movie_add_filter_list = () => {
-        axios.get('http://localhost:8080/movielist/getMovieList_already_on_boxoffice')
+        axios.get('/movielist/getMovieList_already_on_boxoffice')
             .then(res => {setMovie_count(res.data.length)
                 setMovielist_release_filter(movielist_release_filter => movielist_release_filter + 20) 
                 console.log("개봉중인 영화 리스트 = " + movielist_release_filter) 
@@ -102,7 +102,7 @@ const Movielist_tab01 = () => {
 
     const onSearch = () => {
         axios
-            .get('http://localhost:8080/movielist/Movie_search_boxoffice', {
+            .get('/movielist/Movie_search_boxoffice', {
                     params : {
                         searchOption : searchOption,
                         keyword: keyword
